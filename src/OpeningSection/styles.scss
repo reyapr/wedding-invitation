@@ -1,0 +1,131 @@
+.opening-section {
+    height: 821px;
+    width: 100%;
+    
+    .text {
+        width: 100%;
+        display: table-cell;
+        vertical-align: middle;
+        position: relative;
+        font-style: italic;
+    }
+    
+    h4 {
+        font-size: 2.1875rem;
+    }
+    
+    h2 {
+        color: #fff;
+        border-top: 1px solid rgba(109,106,106,.5);
+        border-bottom: 1px solid rgba(109,106,106,.5);
+        padding: 2px 25px 5px;
+        margin: .2em 0;
+        display: inline-block;
+        position: relative;
+        font-weight: 400;
+        font-size: 4.375rem;
+        font-family: "Parisienne", Sans-serif
+    }
+    p {
+        margin: 0;
+        line-height: 2em;
+        font-size: 1.25rem;
+    }
+    
+    .text-container {
+        display: table;
+        position: absolute;
+        left: 50%;
+        top: calc(50% + 50px);
+        z-index: 10;
+        -webkit-transform: translate(-50%,-50%);
+        transform: translate(-50%,-50%);
+        width: 550px;
+        height: 481px;
+        color: white;
+        max-width: 100%;
+    }
+    
+    .image-container {
+        height: 100vh;
+    }
+    
+        
+    @media (max-width: 991px) {
+        .image-container {
+            min-height: 600px;
+        }
+        .text-container {
+            width: 550px;
+            height: 481px;
+            top: 50%;
+        }
+        
+        h4 {
+            margin: 1.5em 0 0;
+            font-size: 2.1875rem;
+        }
+        
+        h2 {
+            font-size: 4.375rem;
+        }
+    }
+          
+       
+    @media (max-width: 767px) {
+        .image-container {
+            min-height: 600px;
+        }
+        .text-container {
+            width: 450px;
+            height: 392px;
+        }
+        
+        h4 {
+            font-size: 1.875rem;
+            margin: 1.3em 0 0;
+        }
+        
+        h2 {
+            font-size: 55px;
+            font-size: 2.8375rem;
+        }
+    }
+    
+    @media (max-width: 450px) {
+        .text-container {
+            width: 400px;
+            height: 349px;
+        }
+    }
+    
+    .section {
+        left: 0;
+        top: 0;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    
+    .image {
+        width: 100%;
+        object-fit: cover;
+        height: inherit;
+    }
+    
+    .particles {
+        height: 100%;
+    }
+
+    
+    .section-text {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+}
+
