@@ -1,6 +1,6 @@
 import React from 'react';
 import Particles, { IParticlesParams } from 'react-particles-js';
-import Wifey from '../assets/us.jpg';
+import us from '../assets/us.jpg';
 
 import './styles.scss';
 
@@ -36,7 +36,7 @@ const OpeningSection = () => {
   return (
     <div className="opening-section">
       <div className="image-container">
-        <img src={Wifey} alt="" className="image" />
+        <img src={us} alt="" className="image" />
       </div>
       <div className="section">
         <Particles params={particlesConfig} className="particles" />
