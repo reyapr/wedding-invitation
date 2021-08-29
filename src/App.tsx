@@ -1,12 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import OpeningSection from './OpeningSection';
+import BrideGroom from './Bride';
 
 function App() {
   return (
     <div>
       <OpeningSection/>
+      <BrideGroom/>
     </div>
   );
 }
