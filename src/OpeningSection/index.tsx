@@ -48,7 +48,7 @@ const OpeningSection = () => {
               Undangan Pernikahan
             </h4>
             <h2 className="wow fadeIn heading-font-couple animated" data-wow-delay="0.2s" style={{visibility: 'visible', 'animationDelay': '0.2s'}}>Ulfah &amp; Renal</h2>
-            <p className="wow fadeIn animated" data-wow-delay="0.2s" style={{visibility: 'visible', 'animationDelay': '0.2s'}}>31 October 2021</p>
+            <p className="wow fadeIn animated" data-wow-delay="0.2s" style={{visibility: 'visible', 'animationDelay': '0.2s'}}>31 Oktober 2021</p>
             <p className="wow fadeIn animated" data-wow-delay="0.2s" style={{visibility: 'visible', 'animationDelay': '0.2s'}}>13:00
               - 20:00 WIB
             </p>
