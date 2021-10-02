@@ -1,0 +1,25 @@
+.my-audio {
+    position: fixed; 
+    bottom: 60px;
+    left: 75%;
+    height: 10px;
+    width: 600px;
+    z-index: 1000;
+    
+    
+    .circle {
+        width: 50px;
+        height: 50px;
+        background-color: rgba(216, 173, 131, 0.7);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        .play-pause-icon {
+            color: white;
+            width: 40px;
+            height: 40px;
+        }
+    }
+}

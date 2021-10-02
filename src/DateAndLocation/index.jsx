@@ -7,7 +7,7 @@ import LocationImage from '../assets/location.png';
 
 import "./styles.scss"
 
-const CheckList = () => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+const CheckList = () => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
 
 const DateAndLocation = () => {
   
@@ -15,7 +15,7 @@ const DateAndLocation = () => {
   
   return (
     <Grid container justifyContent="center">
-       <Grid className="date-and-location" justifyContent="center">
+       <Grid className="date-and-location" >
         <Grid>
           <Typography className="content-title">
               Tanggal & Lokasi
@@ -35,7 +35,7 @@ const DateAndLocation = () => {
                 Jl. Brawijaya No.16, Sriwidari, Kec. Gunungpuyuh, Kota Sukabumi, Jawa Barat 43123.
               </div>
               <div className="content gmap_canvas" onClick={() => window.location.href=mamiUnguLocation}> 
-                <iframe href={mamiUnguLocation} title="location" width="400" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Mami%20Ungu%20Sukabumi&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"/>
+                <iframe href={mamiUnguLocation} title="location" width="400" height="400" id="gmap_canvas" src="https://maps.google.com/maps?q=Mami%20Ungu%20Sukabumi&t=&z=15&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight="0" marginWidth="0"/>
               </div>
               <div className="content alert alert-light">
                 <h5 className="alert-heading">Informasi Protokol Kesehatan</h5>

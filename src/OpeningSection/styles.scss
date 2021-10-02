@@ -11,6 +11,8 @@
         vertical-align: middle;
         position: relative;
         font-style: italic;
+        color: rgba(216, 173, 131, 0.9);
+        
     }
     
     h4 {
@@ -18,7 +20,7 @@
     }
     
     h2 {
-        color: #fff;
+        color: rgba(216, 173, 131, 0.9);
         border-top: 1px solid rgba(109,106,106,.5);
         border-bottom: 1px solid rgba(109,106,106,.5);
         padding: 2px 25px 5px;
@@ -32,8 +34,16 @@
     p {
         margin: 0;
         line-height: 2em;
-        font-size: 1.25rem;
+        font-size: 1.40rem;
     }
+    
+    @media (min-width: 450px) {
+        p {
+            margin: 0;
+            line-height: 2em;
+            font-size: 2rem;
+        }
+      }
     
     .text-container {
         display: table;

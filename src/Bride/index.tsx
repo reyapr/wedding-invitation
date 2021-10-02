@@ -17,19 +17,19 @@ const BrideGroom = () => {
   
   return (
     <Grid container className="bride-groom" justifyContent="center" alignItems="center">
-        <Grid container xs={12} className="title" justifyContent="center">
+        <Grid container className="title" justifyContent="center">
           Mempelai
         </Grid>
         <Grid container xs={12} justifyContent="center" className="content">
           <Grid container xs={10} md={8} direction="row" alignItems="center" justifyContent="space-around">
-            <Grid container md={5} sm={8}>
+            <Grid md={5} sm={8}>
               <Card>
                 <CardContent>
                   <BrideGroomDetail imageUrl={ulfah} textTitle={brideName} textDetail={brideParentName}/>
                 </CardContent>
               </Card>
             </Grid>
-            <Grid container md={5} sm={8} className="bride-groom-section-2">
+            <Grid md={5} sm={8} className="bride-groom-section-2">
               <Card>
                 <CardContent>
                   <BrideGroomDetail imageUrl={renal} textTitle={groomName} textDetail={groomParentName}/>

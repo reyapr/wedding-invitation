@@ -4,6 +4,7 @@ import us from '../assets/us.jpg';
 
 import './styles.scss';
 
+
 const particlesConfig: IParticlesParams = {
   "particles": {
     "number": {
@@ -31,6 +32,7 @@ const particlesConfig: IParticlesParams = {
     }
   }
 }
+
 
 const OpeningSection = () => {
   return (
