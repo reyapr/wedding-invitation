@@ -13,7 +13,9 @@ const BrideGroomDetail = ({ imageUrl, textTitle, textDetail }: IBridgeGroomDetai
   return (
     <Grid container className="bride-groom-detail" justifyContent="center" direction="column">
       <Grid container className="image">
-        <img src={imageUrl} alt=""/>
+        <Grid>
+          <img src={imageUrl} alt=""/>
+        </Grid>
       </Grid>
       <Grid className="detail">
         <h2>{textTitle}</h2>

@@ -1,25 +1,33 @@
 .bride-groom-detail {
   .image {
     max-width: 252px;
-    max-height: 142px;
-    min-height: 127px;
-    min-width: 226px;
+    max-height: 252px;
+    min-height: 166px;
+    min-width: 166px;
+    width: 166px;
     border-radius: 50%;
-    border:#BB9EAB solid;
+    border:#d8ad83 solid;
     align-self: center;
+    background-position: center center;
+    background-repeat: no-repeat;
+    align-items: flex-end;
     
     img {
-      width: 100%;
+      display: -webkit-flex;
       height: 100%;
+      width: 100%;
       border-radius: 50%;
       vertical-align: middle;
-  
+      background-position: center center;
+      background-repeat: no-repeat;
+      align-self: end;
+      
     }  
   }
   
   h2 {
-    font-family: 'Sacramento', cursive;
-    color: #BB9EAB;
+    font-family: 'Dancing Script', cursive;
+    color: #d8ad83;
     font-size: 2rem;
     
   }

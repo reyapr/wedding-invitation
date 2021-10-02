@@ -1,3 +1,6 @@
+.MuiPaper-rounded {
+    border-radius: 15px !important;
+}
 .opening-section {
     width: 100%;
     overflow-x: hidden;
@@ -23,8 +26,8 @@
         display: inline-block;
         position: relative;
         font-weight: 400;
-        font-size: 4.375rem;
-        font-family: "Parisienne", Sans-serif
+        font-size: 5.375rem;
+        font-family: "Dancing Script", Sans-serif
     }
     p {
         margin: 0;

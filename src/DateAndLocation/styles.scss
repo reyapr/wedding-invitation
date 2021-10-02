@@ -4,11 +4,12 @@
   margin-bottom: 2%;
   text-align: center;
   font-family: "Josefin Sans",sans-serif;
+  max-width: 1540px;
   
   .content-title {
     margin-top: 15px;
-    font-family: "Rouge Script", sans-serif;
-    color: #BB9EAB;
+    font-family: "Dancing Script", sans-serif;
+    color: #d8ad83;
     font-size: 3.4375rem;
     margin-bottom: 15px;
   }
@@ -65,14 +66,14 @@
     
     .alert-heading {
       font-family: "Josefin Sans", sans-serif;
-      color: #BB9EAB !important;
+      color: #d8ad83 !important;
       margin-top: 5px;
     }
     
     .alert-light {
       color: #818182;
       background-color: #F9F9F9;
-      border-color: #BB9EAB;
+      border-color: #d8ad83;
     }
     
     .gmap_canvas iframe {
@@ -81,7 +82,7 @@
     }
     
     .location-button {
-      background-color: #BB9EAB;
+      background-color: #d8ad83;
       color: #fff;
       font-weight: 600;
       padding: 15px 27px 12px;

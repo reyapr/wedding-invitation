@@ -1,7 +1,8 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
+import { Grid, Card, CardContent } from '@material-ui/core';
 import BrideGroomDetail from '../BridgeGroomDetail';
-import us from '../assets/us.jpg'
+import renal from '../assets/renal-kua.jpeg';
+import ulfah from '../assets/ulfah-kua.jpeg';
 
 
 import './styles.scss';
@@ -19,13 +20,21 @@ const BrideGroom = () => {
         <Grid container xs={12} className="title" justifyContent="center">
           Mempelai
         </Grid>
-        <Grid container xs={12} justifyContent="center">
-          <Grid container xs={10} direction="row" alignItems="center" justifyContent="space-around">
+        <Grid container xs={12} justifyContent="center" className="content">
+          <Grid container xs={10} md={8} direction="row" alignItems="center" justifyContent="space-around">
             <Grid container md={5} sm={8}>
-              <BrideGroomDetail imageUrl={us} textTitle={brideName} textDetail={brideParentName}/>
+              <Card>
+                <CardContent>
+                  <BrideGroomDetail imageUrl={ulfah} textTitle={brideName} textDetail={brideParentName}/>
+                </CardContent>
+              </Card>
             </Grid>
             <Grid container md={5} sm={8} className="bride-groom-section-2">
-              <BrideGroomDetail imageUrl={us} textTitle={groomName} textDetail={groomParentName}/>
+              <Card>
+                <CardContent>
+                  <BrideGroomDetail imageUrl={renal} textTitle={groomName} textDetail={groomParentName}/>
+                </CardContent>
+              </Card>
             </Grid>
           </Grid>
         </Grid>
