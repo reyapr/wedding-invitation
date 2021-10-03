@@ -4,7 +4,6 @@ import BrideGroom from './Bride';
 import DateAndLocation from './DateAndLocation';
 import AudioPlayer from './AudioPlayer/index';
 import sound from './assets/love-someone-cover-joseph.mp3';
-import { Button } from '@material-ui/core';
 import OpeningModal from './OpeningModal/index';
 
 const audio = new Audio(sound)
