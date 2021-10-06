@@ -5,6 +5,7 @@ import DateAndLocation from './DateAndLocation';
 import AudioPlayer from './AudioPlayer/index';
 import sound from './assets/love-someone-cover-joseph.mp3';
 import OpeningModal from './OpeningModal/index';
+import Message from './Message';
 
 const audio = new Audio(sound)
 audio.loop = true;
@@ -38,6 +39,7 @@ function App() {
       <OpeningModal handleClose={handleClose} open={open}/>
       <OpeningSection />
       <BrideGroom/>
+      <Message/>
       <DateAndLocation/>
       <AudioPlayer setIsPlay={setIsPlay} isPlay={!isPlay}/>
     </div>
