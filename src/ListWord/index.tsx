@@ -31,13 +31,12 @@ export default function AlignItemsList({ data }: any) {
         <Grid>
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+              <Avatar alt={person.name} src="/static/images/avatar/1.jpg" />
             </ListItemAvatar>
             <ListItemText
               primary={person.name}
               secondary={
                 <React.Fragment>
-                
                   "{person.description}"
                 </React.Fragment>
               }

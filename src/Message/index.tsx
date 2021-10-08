@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-escape */
-import { Button, Card, CardContent, FormControl, Grid, InputLabel, Select, setRef, TextField, Typography } from '@material-ui/core';
+import { Button, Card, CardContent, FormControl, Grid, InputLabel, Select, TextField, Typography } from '@material-ui/core';
 import Pagination from '@material-ui/lab/Pagination';
 import React, { useEffect, useState } from 'react'
 import CommentResponseDto from '../dto/CommentResponseDto';
@@ -7,14 +7,6 @@ import ListWord from '../ListWord';
 import { createComment, getComment } from '../outbound/comment';
 
 import './styles.scss'
-
-const persons = [
-  {name: 'Reza', words: 'Hi selamat ya '},
-  {name: 'Reza', words: 'Hi selamat ya '},
-  {name: 'Reza', words: 'Hi selamat ya '},
-  {name: 'Reza', words: 'Hi selamat ya '},
-  {name: 'Reza', words: 'Hi selamat ya '},
-]
 
 interface HandleChange {
   [key: string]: (params: any) => any
@@ -25,12 +17,13 @@ const Message = () => {
   const queryParams = new URLSearchParams(search)
   const defaultPage = queryParams.get('page') || "1";
   const defaultLimit = "4";
+  const defaultPageObj = {page: defaultPage, limit: defaultLimit};
   const defaultName = {value: '', error: false};
   const defaultWords = {value: '', error: false};
   
   const [name, setName] = useState(defaultName);
   const [words, setWords] = useState(defaultWords);
-  const [page, setPage] = useState({page: defaultPage, limit: defaultLimit})
+  const [page, setPage] = useState(defaultPageObj)
   const [isPresent, setIsPresent] = useState(false);
   const [comments, setComments] = useState<object[]>([]);
   const [count, setCount] = useState(1);
@@ -51,14 +44,16 @@ const Message = () => {
     createComment({ name: name.value, present: isPresent, description: words.value})
     setName(defaultName);
     setWords(defaultWords);
+    updatePage('1')
     setResfresh(!refresh)
   } 
   
-  const updateQueryParams = (page: string) => {
+  const updatePage = (pageParam: string) => {
     if(window.history.pushState) {
-      var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + `?page=${page}`;
+      var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + `?page=${pageParam}`;
       window.history.pushState({path: newurl}, '', newurl)
     }
+    setPage({page: pageParam, limit: defaultLimit})
   }
   
   const handleChange: HandleChange = {
@@ -132,31 +127,39 @@ const Message = () => {
                 </FormControl>
               </Grid>
               <Grid className="flex">
-                <Button variant="outlined" onClick={() => sendComment()}>Kirim</Button>
-              </Grid>
-            </Grid>
-          </CardContent>
-          <CardContent>
-            <Grid container className="list" justifyContent="center">
-              <Grid container justifyContent="flex-start">
-                <ListWord data={comments}/>
-              </Grid>
-              <Grid className="margin-bottom">
-                <Pagination 
-                  size="small" 
-                  siblingCount={0} 
-                  count={count} 
+                <Button 
+                  disabled={name.error || words.error} 
                   variant="outlined" 
-                  shape="rounded"
-                  defaultPage={Number(defaultPage)}
-                  onChange={(e:any, number: any) => {
-                    setPage({page: number, limit: defaultLimit})
-                    updateQueryParams(number)
-                  }}
-                />
+                  onClick={() => sendComment()}
+                >
+                  Kirim
+                </Button>
               </Grid>
             </Grid>
           </CardContent>
+          {
+            comments.length > 0 &&
+            <CardContent>
+              <Grid container className="list" justifyContent="center">
+                <Grid container justifyContent="flex-start">
+                  <ListWord data={comments}/>
+                </Grid>
+                <Grid className="margin-bottom">
+                  <Pagination 
+                    size="small" 
+                    siblingCount={0} 
+                    count={count} 
+                    variant="outlined" 
+                    shape="rounded"
+                    page={Number(page.page)}
+                    onChange={(e:any, number: any) => {
+                      updatePage(number)
+                    }}
+                  />
+                </Grid>
+              </Grid>
+            </CardContent>
+          }
         </Card>
       </Grid>
     </Grid>
