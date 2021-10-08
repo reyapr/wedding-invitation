@@ -1,5 +1,6 @@
 /* eslint-disable no-useless-escape */
 import { Button, Card, CardContent, FormControl, Grid, InputLabel, Select, TextField, Typography } from '@material-ui/core';
+import Beenhere from '@material-ui/icons/Beenhere';
 import Pagination from '@material-ui/lab/Pagination';
 import React, { useEffect, useState } from 'react'
 import CommentResponseDto from '../dto/CommentResponseDto';
@@ -24,7 +25,7 @@ const Message = () => {
   const [name, setName] = useState(defaultName);
   const [words, setWords] = useState(defaultWords);
   const [page, setPage] = useState(defaultPageObj)
-  const [isPresent, setIsPresent] = useState(false);
+  const [isPresent, setIsPresent] = useState(0);
   const [comments, setComments] = useState<object[]>([]);
   const [count, setCount] = useState(1);
   const [refresh, setResfresh] = useState(false);
@@ -41,7 +42,7 @@ const Message = () => {
   }, [page, refresh])
     
   const sendComment = () => {
-    createComment({ name: name.value, present: isPresent, description: words.value})
+    createComment({ name: name.value, present: !!Number(isPresent), description: words.value})
     setName(defaultName);
     setWords(defaultWords);
     updatePage('1')
@@ -66,7 +67,7 @@ const Message = () => {
       let isValid = /^[a-zA-Z0-9\&\s\,\.\?\"\'\(\)]+$/.test(newWords)
       setWords({value: newWords, error: !isValid})
     },
-    present: (isPresent: boolean) => setIsPresent(isPresent),
+    present: (isPresent: number) => setIsPresent(isPresent),
   }
   
   const mapHandleChange = (e: any) => handleChange[e.target.name](e.target.value)
@@ -128,7 +129,7 @@ const Message = () => {
               </Grid>
               <Grid className="flex">
                 <Button 
-                  disabled={name.error || words.error} 
+                  disabled={name.error || words.error || !name.value || !words.value} 
                   variant="outlined" 
                   onClick={() => sendComment()}
                 >
