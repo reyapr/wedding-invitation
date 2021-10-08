@@ -50,7 +50,7 @@ export default function AlignItemsList({ data }: any) {
               }
               secondary={
                 <React.Fragment>
-                  "{person.description}"
+                  {person.description}
                 </React.Fragment>
               }
             />
