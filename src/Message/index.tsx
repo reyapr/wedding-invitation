@@ -1,8 +1,10 @@
 /* eslint-disable no-useless-escape */
-import { Button, Card, CardContent, FormControl, Grid, InputLabel, Select, TextField, Typography } from '@material-ui/core';
+import { Button, Card, CardContent, FormControl, Grid, InputLabel, Select, setRef, TextField, Typography } from '@material-ui/core';
 import Pagination from '@material-ui/lab/Pagination';
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import CommentResponseDto from '../dto/CommentResponseDto';
 import ListWord from '../ListWord';
+import { createComment, getComment } from '../outbound/comment';
 
 import './styles.scss'
 
@@ -19,9 +21,45 @@ interface HandleChange {
 }
 
 const Message = () => {
-  const [name, setName] = useState({value: '', error: false});
-  const [words, setWords] = useState({value: '', error: false});
+  const search = window.location.search
+  const queryParams = new URLSearchParams(search)
+  const defaultPage = queryParams.get('page') || "1";
+  const defaultLimit = "4";
+  const defaultName = {value: '', error: false};
+  const defaultWords = {value: '', error: false};
+  
+  const [name, setName] = useState(defaultName);
+  const [words, setWords] = useState(defaultWords);
+  const [page, setPage] = useState({page: defaultPage, limit: defaultLimit})
   const [isPresent, setIsPresent] = useState(false);
+  const [comments, setComments] = useState<object[]>([]);
+  const [count, setCount] = useState(1);
+  const [refresh, setResfresh] = useState(false);
+  
+  useEffect(() => {
+    getComment({
+      page: String(Number(page.page) - 1),
+      limit: page.limit
+    })
+    .then((data: CommentResponseDto) => {
+      setComments([...data.comments]);
+      setCount(Math.ceil(data.total/Number(defaultLimit)))
+    });
+  }, [page, refresh])
+    
+  const sendComment = () => {
+    createComment({ name: name.value, present: isPresent, description: words.value})
+    setName(defaultName);
+    setWords(defaultWords);
+    setResfresh(!refresh)
+  } 
+  
+  const updateQueryParams = (page: string) => {
+    if(window.history.pushState) {
+      var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + `?page=${page}`;
+      window.history.pushState({path: newurl}, '', newurl)
+    }
+  }
   
   const handleChange: HandleChange = {
     name: (newName: string) => {
@@ -94,24 +132,26 @@ const Message = () => {
                 </FormControl>
               </Grid>
               <Grid className="flex">
-                <Button variant="outlined">Kirim</Button>
+                <Button variant="outlined" onClick={() => sendComment()}>Kirim</Button>
               </Grid>
             </Grid>
           </CardContent>
           <CardContent>
             <Grid container className="list" justifyContent="center">
               <Grid container justifyContent="flex-start">
-                <ListWord data={persons}/>
+                <ListWord data={comments}/>
               </Grid>
               <Grid className="margin-bottom">
                 <Pagination 
                   size="small" 
                   siblingCount={0} 
-                  count={20} 
+                  count={count} 
                   variant="outlined" 
                   shape="rounded"
+                  defaultPage={Number(defaultPage)}
                   onChange={(e:any, number: any) => {
-                    console.log(number, '<===================  ==================');
+                    setPage({page: number, limit: defaultLimit})
+                    updateQueryParams(number)
                   }}
                 />
               </Grid>

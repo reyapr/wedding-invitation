@@ -12,8 +12,9 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       width: '100%',
-      maxWidth: '36ch',
+      maxWidth: '90%',
       backgroundColor: theme.palette.background.paper,
+      minHeight: '307px'
     },
     inline: {
       display: 'inline',
@@ -24,7 +25,7 @@ const useStyles = makeStyles((theme: Theme) =>
 export default function AlignItemsList({ data }: any) {
   const classes = useStyles();
 
-  return (
+  return ( 
     <List className={classes.root}>
       {data.map((person: any, index: any) => (
         <Grid>
@@ -37,7 +38,7 @@ export default function AlignItemsList({ data }: any) {
               secondary={
                 <React.Fragment>
                 
-                  "{person.words}"
+                  "{person.description}"
                 </React.Fragment>
               }
             />
