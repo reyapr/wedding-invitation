@@ -64,7 +64,7 @@ const Message = () => {
       setName({value: newName, error: !isValid})
     },
     words: (newWords: string) => {
-      let isValid = /^[a-zA-Z0-9\&\s\,\.\?\"\'\(\)]+$/.test(newWords)
+      let isValid = /^[a-zA-Z0-9\&\s\,\.\?\"\'\(\)\u0621-\u064A\u0660-\u0669]+$/.test(newWords)
       setWords({value: newWords, error: !isValid})
     },
     present: (isPresent: number) => setIsPresent(isPresent),
