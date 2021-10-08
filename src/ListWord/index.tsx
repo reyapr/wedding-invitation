@@ -7,7 +7,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import { Grid } from '@material-ui/core';
-import CheckList from '@material-ui/icons/Beenhere'
+import CheckList from '@material-ui/icons/CheckCircle'
 
 import './styles.scss';
 
@@ -43,8 +43,17 @@ export default function AlignItemsList({ data }: any) {
               primary={
                 <Grid container direction="row">
                   <Grid>{person.name}</Grid>
-                  <Grid  className="present-container">
-                    {person.present && <CheckList className="present"/>}
+                  <Grid >
+                    {person.present ?
+                      <span className="present">
+                        <CheckList className="checklist"/>
+                        <span className="text">Hadir</span>
+                      </span>
+                      :
+                      <span className="present">
+                        <span className="text">Tidak Hadir</span>
+                      </span>
+                    }
                   </Grid>
                 </Grid>
               }

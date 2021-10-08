@@ -1,18 +1,23 @@
 .list-item {
   
   .present {
-    font-size: 1.5rem;
-    fill: #d8ad83;
-    transform: translate(1.5px, 0px);
-  }
-  
-  .present-container {
-    height: 24px;
-    display: flex;
-  }
-  
-  .present-container-child {
-    height: inherit;
-    display: flex;
+    background-color: #d8ad83;
+    margin-left: 5px;
+    height: 17px;
+    width: 50px;
+    border-radius: 8px;
+    
+    .checklist {
+      font-size: 1em;
+      fill: white;
+      transform: translate(1px, 3px);
+    }
+    
+    .text {
+      margin-left: 5px;
+      padding-right: 5px;
+      color: white;
+      font-size: 0.9rem;
+    }
   }
 }
