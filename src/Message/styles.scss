@@ -93,6 +93,7 @@
   
   .margin-bottom {
     margin-bottom: 10px;
+    align-self: flex-end;
   }
   
   .margin-top {
@@ -105,5 +106,9 @@
     .MuiButton-root:active {
       background-color: rgba(216, 173, 131, 0.4);
     }
+  }
+  
+  .MuiCircularProgress-colorPrimary {
+    color: #d8ad83;
   }
 }

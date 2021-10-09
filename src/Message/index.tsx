@@ -1,5 +1,5 @@
 /* eslint-disable no-useless-escape */
-import { Button, Card, CardContent, FormControl, Grid, InputLabel, Select, TextField, Typography } from '@material-ui/core';
+import { Button, Card, CardContent, CircularProgress, FormControl, Grid, InputLabel, Select, TextField, Typography } from '@material-ui/core';
 import Beenhere from '@material-ui/icons/Beenhere';
 import Pagination from '@material-ui/lab/Pagination';
 import React, { useEffect, useState } from 'react'
@@ -29,6 +29,7 @@ const Message = () => {
   const [comments, setComments] = useState<object[]>([]);
   const [count, setCount] = useState(1);
   const [refresh, setResfresh] = useState(false);
+  const [loading, setLoading] = useState(false);
   
   useEffect(() => {
     getComment({
@@ -38,10 +39,12 @@ const Message = () => {
     .then((data: CommentResponseDto) => {
       setComments([...data.comments]);
       setCount(Math.ceil(data.total/Number(defaultLimit)))
+      setLoading(false)
     });
   }, [page, refresh])
     
   const sendComment = () => {
+    setLoading(true)
     createComment({ name: name.value, present: !!Number(isPresent), description: words.value})
     setName(defaultName);
     setWords(defaultWords);
@@ -56,6 +59,7 @@ const Message = () => {
       var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + `?page=${pageParam}`;
       window.history.pushState({path: newurl}, '', newurl)
     }
+    setLoading(true)
     setPage({page: pageParam, limit: defaultLimit})
   }
   
@@ -143,10 +147,16 @@ const Message = () => {
           {
             comments.length > 0 &&
             <CardContent>
-              <Grid container className="list" justifyContent="center">
-                <Grid container justifyContent="flex-start">
-                  <ListWord data={comments}/>
-                </Grid>
+              <Grid container className="list" justifyContent="center" alignItems="flex-end">
+                {loading ? 
+                  <Grid container justifyContent="center" alignItems="center">
+                    <CircularProgress />
+                  </Grid>
+                  :
+                  <Grid container justifyContent="flex-start">
+                    <ListWord data={comments}/>
+                  </Grid>
+                }
                 <Grid className="margin-bottom">
                   <Pagination 
                     size="small" 

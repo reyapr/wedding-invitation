@@ -1,8 +1,11 @@
 .list-item {
   
+  .name {
+    margin-right: 5px;
+  }
+  
   .present {
     background-color: #d8ad83;
-    margin-left: 5px;
     height: 17px;
     width: 50px;
     border-radius: 8px;

@@ -41,8 +41,7 @@ export default function AlignItemsList({ data }: any) {
             </ListItemAvatar>
             <ListItemText
               primary={
-                <Grid container direction="row">
-                  <Grid>{person.name}</Grid>
+                <Grid container direction="column">
                   <Grid >
                     {person.present ?
                       <span className="present">
@@ -55,6 +54,7 @@ export default function AlignItemsList({ data }: any) {
                       </span>
                     }
                   </Grid>
+                  <Grid className="name">{person.name}</Grid>
                 </Grid>
               }
               secondary={
