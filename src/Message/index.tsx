@@ -46,7 +46,9 @@ const Message = () => {
     setName(defaultName);
     setWords(defaultWords);
     updatePage('1')
-    setResfresh(!refresh)
+    setTimeout(() => {
+      setResfresh(!refresh)
+    },500)
   } 
   
   const updatePage = (pageParam: string) => {
