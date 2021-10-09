@@ -16,6 +16,7 @@ const Message = () => {
   const search = window.location.search
   const queryParams = new URLSearchParams(search)
   const defaultPage = queryParams.get('page') || "1";
+  const to = queryParams.get('to') || '';
   const defaultLimit = "4";
   const defaultPageObj = {page: defaultPage, limit: defaultLimit};
   const defaultName = {value: '', error: false};
@@ -54,7 +55,7 @@ const Message = () => {
   
   const updatePage = (pageParam: string) => {
     if(window.history.pushState) {
-      var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + `?page=${pageParam}`;
+      var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + `${to ? `?to=${to}&` : '?'}page=${pageParam}`;
       window.history.pushState({path: newurl}, '', newurl)
     }
     setPage({page: pageParam, limit: defaultLimit})
