@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { CommentRequestDto } from '../dto/CommentRequestDto';
 
-const url = process.env.BE_ENDPOINT;
+const url = process.env.REACT_APP_BE_ENDPOINT;
 interface Page {
   page: string, 
   limit: string
