@@ -43,7 +43,6 @@ const Message = () => {
     const newComment = { name: name.value, present: !!Number(isPresent), description: words.value};
     const newComments = [...comments];
     newComments.unshift(newComment)
-    newComments.pop()
     setComments(newComments)
     createComment(newComment)
     setName(defaultName);

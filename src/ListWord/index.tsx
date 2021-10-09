@@ -33,7 +33,7 @@ export default function AlignItemsList({ data }: any) {
 
   return ( 
     <List className={classes.root}>
-      {data.map((person: any, index: any) => (
+      {data.slice(0,4).map((person: any, index: any) => (
         <Grid className="list-item">
           <ListItem alignItems="flex-start">
             <ListItemAvatar>
