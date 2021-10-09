@@ -1,6 +1,5 @@
 /* eslint-disable no-useless-escape */
-import { Button, Card, CardContent, CircularProgress, FormControl, Grid, InputLabel, Select, TextField, Typography } from '@material-ui/core';
-import Beenhere from '@material-ui/icons/Beenhere';
+import { Button, Card, CardContent, FormControl, Grid, InputLabel, Select, TextField, Typography } from '@material-ui/core';
 import Pagination from '@material-ui/lab/Pagination';
 import React, { useEffect, useState } from 'react'
 import CommentResponseDto from '../dto/CommentResponseDto';
@@ -41,7 +40,12 @@ const Message = () => {
   }, [page])
     
   const sendComment = () => {
-    createComment({ name: name.value, present: !!Number(isPresent), description: words.value})
+    const newComment = { name: name.value, present: !!Number(isPresent), description: words.value};
+    const newComments = [...comments];
+    newComments.unshift(newComment)
+    newComments.pop()
+    setComments(newComments)
+    createComment(newComment)
     setName(defaultName);
     setWords(defaultWords);
     setTimeout(() => {
