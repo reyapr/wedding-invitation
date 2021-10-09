@@ -108,7 +108,7 @@ const Message = () => {
                 value={words.value} 
                 onChange={mapHandleChange}
                 error={words.error}
-                helperText={words.error && "Harus Berupa Huruf/Angka/Simbol Untuk Percakapan"}
+                helperText={words.error && "Harus Berupa Huruf/Angka/Simbol Untuk Sebuah Catatan"}
               />
             </Grid>
             <Grid direction="row" container className="margin-top margin-bottom" justifyContent="space-between">
