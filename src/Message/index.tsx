@@ -28,8 +28,6 @@ const Message = () => {
   const [isPresent, setIsPresent] = useState(0);
   const [comments, setComments] = useState<object[]>([]);
   const [count, setCount] = useState(1);
-  const [refresh, setResfresh] = useState(false);
-  const [loading, setLoading] = useState(false);
   
   useEffect(() => {
     getComment({
@@ -39,18 +37,15 @@ const Message = () => {
     .then((data: CommentResponseDto) => {
       setComments([...data.comments]);
       setCount(Math.ceil(data.total/Number(defaultLimit)))
-      setLoading(false)
     });
-  }, [page, refresh])
+  }, [page])
     
   const sendComment = () => {
-    setLoading(true)
     createComment({ name: name.value, present: !!Number(isPresent), description: words.value})
     setName(defaultName);
     setWords(defaultWords);
-    updatePage('1')
     setTimeout(() => {
-      setResfresh(!refresh)
+      updatePage('1')
     },500)
   } 
   
@@ -59,7 +54,6 @@ const Message = () => {
       var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + `?page=${pageParam}`;
       window.history.pushState({path: newurl}, '', newurl)
     }
-    setLoading(true)
     setPage({page: pageParam, limit: defaultLimit})
   }
   
@@ -148,15 +142,9 @@ const Message = () => {
             comments.length > 0 &&
             <CardContent>
               <Grid container className="list" justifyContent="center" alignItems="flex-end">
-                {loading ? 
-                  <Grid container justifyContent="center" alignItems="center">
-                    <CircularProgress />
-                  </Grid>
-                  :
-                  <Grid container justifyContent="flex-start">
-                    <ListWord data={comments}/>
-                  </Grid>
-                }
+                <Grid container justifyContent="flex-start">
+                  <ListWord data={comments}/>
+                </Grid>
                 <Grid className="margin-bottom">
                   <Pagination 
                     size="small" 
