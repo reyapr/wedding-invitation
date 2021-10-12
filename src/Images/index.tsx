@@ -17,17 +17,17 @@ import { Grid } from '@material-ui/core';
 const jasImages = [
   {
     img: jas3,
-    tittle: '1',
+    tittle: '',
     author: ''
   },
   {
     img: jas1,
-    tittle: '2',
+    tittle: '',
     author: ''
   },
   {
     img: jas2,
-    tittle: '3',
+    tittle: '',
     author: ''
   }
 ]
@@ -35,17 +35,17 @@ const jasImages = [
 const blueImages = [
   {
     img: blue3,
-    tittle: '1',
+    tittle: '',
     author: ''
   },
   {
     img: blue2,
-    tittle: '2',
+    tittle: '',
     author: ''
   },
   {
     img: blue1,
-    tittle: '3',
+    tittle: '',
     author: ''
   }
 ]
@@ -53,17 +53,17 @@ const blueImages = [
 const blackImages = [
   {
     img: black1,
-    tittle: '1',
+    tittle: '',
     author: ''
   },
   {
     img: black2,
-    tittle: '2',
+    tittle: '',
     author: ''
   },
   {
     img: black3,
-    tittle: '3',
+    tittle: '',
     author: ''
   }
 ]
