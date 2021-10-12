@@ -4,7 +4,6 @@ import { Card, CardContent, Grid, Typography } from '@material-ui/core';
 import DateImage from '../assets/date.png';
 import LocationImage from '../assets/location.png';
 
-
 import "./styles.scss"
 
 const CheckList = () => <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -28,7 +27,7 @@ const DateAndLocation = () => {
               <h5 className="content">
                 <strong>31 Oktober 2021</strong>
               </h5>
-              <div>13:00 - 18:00</div>
+              <div>14:00 - 18:00</div>
               <img className="content" alt="" src={LocationImage} width="40px" height="40px"/>
               <div className="content">
                 Sukabumi, Mami Ungu,

@@ -1,6 +1,7 @@
 import React from 'react';
 import Particles, { IParticlesParams } from 'react-particles-js';
-import us from '../assets/us.jpg';
+import us from '../assets/jas-main.jpeg';
+import usPortrait from '../assets/jas-main-potrait.jpg';
 
 import './styles.scss';
 
@@ -38,7 +39,7 @@ const OpeningSection = () => {
   return (
     <div className="opening-section">
       <div className="image-container">
-        <img src={us} alt="" className="image" />
+        <img src={window.innerWidth > 847 ? usPortrait : us} alt="" className="image" />
       </div>
       <div className="section">
         <Particles params={particlesConfig} className="particles" />
@@ -51,8 +52,8 @@ const OpeningSection = () => {
             </h4>
             <h2 className="wow fadeIn heading-font-couple animated" data-wow-delay="0.2s" style={{visibility: 'visible', 'animationDelay': '0.2s'}}>Ulfah &amp; Renal</h2>
             <p className="wow fadeIn animated" data-wow-delay="0.2s" style={{visibility: 'visible', 'animationDelay': '0.2s'}}>31 Oktober 2021</p>
-            <p className="wow fadeIn animated" data-wow-delay="0.2s" style={{visibility: 'visible', 'animationDelay': '0.2s'}}>13:00
-              - 20:00 WIB
+            <p className="wow fadeIn animated" data-wow-delay="0.2s" style={{visibility: 'visible', 'animationDelay': '0.2s'}}>14:00
+              - 18:00 WIB
             </p>
           </div>
         </div>
