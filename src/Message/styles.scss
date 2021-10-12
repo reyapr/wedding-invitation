@@ -1,6 +1,7 @@
 .message {
   margin-bottom: 68px;
   margin-top: 40px;
+  max-width: 1540px;
   
   .content-title {
     text-align: center;
@@ -46,11 +47,11 @@
     }
   
     @media (max-width: 1540px) {
-      min-width: 69%;
+      min-width: 58%;
     }
   
     @media (max-width: 1140px) {
-      min-width: 80%;
+      max-width: 80%;
     }
   
     @media (max-width: 450px) {
