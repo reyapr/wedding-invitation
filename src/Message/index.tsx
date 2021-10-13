@@ -42,9 +42,6 @@ const Message = () => {
     
   const sendComment = () => {
     const newComment = { name: name.value, present: !!Number(isPresent), description: words.value};
-    const newComments = [...comments];
-    newComments.unshift(newComment)
-    setComments(newComments)
     createComment(newComment)
     setName(defaultName);
     setWords(defaultWords);
