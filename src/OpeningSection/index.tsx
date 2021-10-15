@@ -52,8 +52,8 @@ const OpeningSection = () => {
             </h4>
             <h2 className="wow fadeIn heading-font-couple animated" data-wow-delay="0.2s" style={{visibility: 'visible', 'animationDelay': '0.2s'}}>Ulfah &amp; Renal</h2>
             <p className="wow fadeIn animated" data-wow-delay="0.2s" style={{visibility: 'visible', 'animationDelay': '0.2s'}}>31 Oktober 2021</p>
-            <p className="wow fadeIn animated" data-wow-delay="0.2s" style={{visibility: 'visible', 'animationDelay': '0.2s'}}>14:00
-              - 18:00 WIB
+            <p className="wow fadeIn animated" data-wow-delay="0.2s" style={{visibility: 'visible', 'animationDelay': '0.2s'}}>Akad: 14:00 - 15:30<br/>
+              Resepsi: 16:00 - 18:00
             </p>
           </div>
         </div>

@@ -27,7 +27,10 @@ const DateAndLocation = () => {
               <h5 className="content">
                 <strong>31 Oktober 2021</strong>
               </h5>
-              <div>14:00 - 18:00</div>
+              <br/>
+              <div>Akad: 14:00 - 15:30</div>
+              <br/>
+              <div>Resepsi: 14:00 - 16:00</div>
               <img className="content" alt="" src={LocationImage} width="40px" height="40px"/>
               <div className="content">
                 Sukabumi, Mami Ungu,
